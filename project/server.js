@@ -38,23 +38,12 @@ var path = require('path');
   const port = process.env.PORT || '3000';
 
   /**
-   * @name staticPath
-   * @description Path to serve static assets.
-   * @type {String}
-   */
-  var staticPath = env === 'production'
-    ? path.join(__dirname, 'dist')
-    : path.join(__dirname, 'src', 'app');
-
-  console.log(staticPath);
-
-  /**
    * Bootstrap middleware
    */
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: false}));
   app.use(cookieParser());
-  app.use(express.static(staticPath));
+  app.use(express.static(path.join(__dirname, 'dist')));
   app.use(helmet());
   app.use(compression());
 
