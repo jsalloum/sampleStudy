@@ -9,7 +9,7 @@
     function instructions() {
       return {
         restrict: 'E',
-        templateUrl: 'instructions/instructions.html',
+        templateUrl: 'app/instructions/instructions.html',
         controller: ['$scope', function($scope) {
           $scope.activeInstructions = 'instructions';
 

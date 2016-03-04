@@ -9,7 +9,7 @@
     function form() {
       return {
         restrict: 'E',
-        templateUrl: 'form/form.html'
+        templateUrl: 'app/form/form.html'
       };
     }
 
