@@ -10,13 +10,6 @@ var path = require('path');
   'use strict';
 
   /**
-   * @name env
-   * @description Node environment.
-   * @type {String}
-   */
-  var env = process.env.NODE_ENV || 'development';
-
-  /**
    * @name app
    * @description Express application.
    * @type {Object}
