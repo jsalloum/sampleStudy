@@ -75,11 +75,8 @@
       }
 
       function submitData() {
-        var experiment = {
-          data: $scope.speakers
-        };
         setTimeout(function() {
-          turk.submit(experiment);
+          turk.submit($scope.speakers);
         }, 1500);
       }
     }
