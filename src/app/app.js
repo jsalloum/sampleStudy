@@ -76,7 +76,7 @@
 
       function submitData() {
         var experiment = {
-          data: $scope.speakers;
+          data: $scope.speakers
         };
         setTimeout(function() {
           turk.submit(experiment);
