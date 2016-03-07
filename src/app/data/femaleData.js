@@ -286,7 +286,7 @@
             speakerId: e.voice,
             voicefil: e.voicefil,
             plev: e.plev,
-            sex: 1,
+            sex: 1
           };
         })
       };

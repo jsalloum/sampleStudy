@@ -31,9 +31,10 @@
           getCurrentSpeaker().behaviorScore = scoreQuestions() / $scope.questions.length;
           $scope.sound.stop();
           if ($scope.speakerNumber === $scope.numSpeakers - 1) {  // On the last speaker
-            console.log('Study finished!');
-            console.log($scope.speakers);
+            // console.log('Study finished!');
+            // console.log($scope.speakers);
             $scope.active = 'finished';
+            submitData();
             return;
           }
           $scope.speakerNumber++;
@@ -71,6 +72,15 @@
         return _.sumBy($scope.questions, function(e) {
           return e.highRank ? e.score : $scope.scale.length + 1 - e.score;
         });
+      }
+
+      function submitData() {
+        var experiment = {
+          data: $scope.speakers;
+        };
+        setTimeout(function() {
+          turk.submit(experiment);
+        }, 1500);
       }
     }
 })();
